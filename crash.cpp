@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
-#include <windows.h> // dla SHGetFolderPath
-#include <shlobj.h>  // dla CSIDL_DESKTOPDIRECTORY
+#include <windows.h>
+#include <shlobj.h> 
 
 int main() {
     // Pobranie ścieżki do pulpitu
