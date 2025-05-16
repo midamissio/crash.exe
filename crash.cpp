@@ -5,12 +5,10 @@
 #include <shlobj.h> 
 
 int main() {
-    // Pobranie ścieżki do pulpitu
     char desktopPath[MAX_PATH];
     if (SUCCEEDED(SHGetFolderPath(NULL, CSIDL_DESKTOPDIRECTORY, NULL, 0, desktopPath))) {
         std::string filePath = std::string(desktopPath) + "\\Get Shutdown'ed.txt";
 
-        // Tworzenie pliku i wpisanie "Hehe"
         std::ofstream outFile(filePath);
         if (outFile.is_open()) {
             outFile << "Hehe";
@@ -23,7 +21,6 @@ int main() {
         std::cerr << "Nie udało się pobrać ścieżki pulpitu.\n";
     }
 
-    // Restart komputera
     std::cout << "Get shutdown'ed";
     system("shutdown /r /t 10");
 
